@@ -1,6 +1,6 @@
 [project]
 name = "reservoir-sample"
-version = "0.1.0"
+version = "0.1.1"
 description = "Uniform sampling from a stream of unknown length in one pass."
 requires-python = ">=3.10"
 dependencies = []
