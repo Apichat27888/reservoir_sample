@@ -54,3 +54,10 @@ read `sample()` whenever you like.
 - `AlgorithmR(capacity, rng=None)` — the sampler itself, with `add(item)`,
   `sample() -> list`, `next_index_for_stream_length(T) -> int | None`,
   `capacity -> int`, `seen -> int`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
